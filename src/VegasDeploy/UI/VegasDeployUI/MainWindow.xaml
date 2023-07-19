@@ -8,14 +8,24 @@
         Title="Vegas Deploy" Height="427" Width="773" MinWidth="650">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition MinWidth="250" MaxWidth="300"/>
+            <ColumnDefinition MinWidth="200" MaxWidth="250"/>
             <ColumnDefinition Width="*" MinWidth="400"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0">
-            
+            <Border>
+                <StackPanel>
+                    <Button x:Name="btnCommit" Click="btnCommit_Click" Margin="5,5,0,5">Commit</Button>
+                    <Button x:Name="btndeploy" Click="btndeploy_Click" Margin="5,5,0,5">Deploy</Button>
+                    <Button x:Name="btnSettings" Click="btnSettings_Click" Margin="5,5,0,5">Settings</Button>
+                </StackPanel>
+            </Border>
         </Grid>
         <Grid Grid.Column="1" >
-
+            <StackPanel Margin="10">
+                <Frame x:Name="frmMain" NavigationUIVisibility="Hidden">
+                    
+                </Frame>
+            </StackPanel>
         </Grid>
     </Grid>
 </Window>

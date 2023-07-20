@@ -9,6 +9,11 @@
       Title="CommitPage">
 
     <Grid>
-        <TextBlock>Commit</TextBlock>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="150" MaxWidth="200"/>
+            <ColumnDefinition Width="*" MinWidth="400"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="0">Text</TextBlock>
+        <TextBlock Grid.Column="1">Text</TextBlock>
     </Grid>
 </Page>

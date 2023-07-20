@@ -5,18 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FF.Vegas.Deploy.UI"
         mc:Ignorable="d"
-        Title="Vegas Deploy" Height="427" Width="773" MinWidth="650">
+        Title="Vegas Deploy" Height="427" Width="650" MinWidth="650" Background="#f3f3f3">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition MinWidth="200" MaxWidth="250"/>
+            <ColumnDefinition MinWidth="150" MaxWidth="200"/>
             <ColumnDefinition Width="*" MinWidth="400"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0">
             <Border>
                 <StackPanel>
-                    <Button x:Name="btnCommit" Click="btnCommit_Click" Margin="5,5,0,5">Commit</Button>
-                    <Button x:Name="btndeploy" Click="btndeploy_Click" Margin="5,5,0,5">Deploy</Button>
-                    <Button x:Name="btnSettings" Click="btnSettings_Click" Margin="5,5,0,5">Settings</Button>
+                    <Button x:Name="btnCommit" Click="btnCommit_Click" Margin="0,2,0,0" Padding="10,5,5,5"   Background="Transparent" BorderThickness="0" HorizontalContentAlignment="Left">
+                        <StackPanel Orientation="Horizontal" >
+                            <Image Source="/Resources/Icons/git.png" Margin="5,0,0,0" Width="28" Height="28"/>
+                            <TextBlock FontSize="14" VerticalAlignment="Center" Margin="15,0,0,0">Commit</TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="btnDeploy" Click="btndeploy_Click" Padding="10,5,5,5"  Background="Transparent" BorderThickness="0" HorizontalContentAlignment="Left">
+                        <StackPanel Orientation="Horizontal" >
+                            <Image Source="/Resources/Icons/upload.png" Margin="5,0,0,0" Width="28" Height="28"/>
+                            <TextBlock FontSize="14" VerticalAlignment="Center" Margin="15,0,0,0">Deploy</TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="btnSettings" Padding="10,5,5,5" Click="btnSettings_Click" Background="Transparent" BorderThickness="0" HorizontalContentAlignment="Left">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/Resources/Icons/settings.png" Margin="5,0,0,0" Width="28" Height="28"/>
+                            <TextBlock FontSize="14" VerticalAlignment="Center" Margin="15,0,0,0" >Settings</TextBlock>
+                        </StackPanel>
+                    </Button>
                 </StackPanel>
             </Border>
         </Grid>

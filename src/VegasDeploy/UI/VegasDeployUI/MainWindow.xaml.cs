@@ -70,7 +70,7 @@ namespace FF.Vegas.Deploy.UI
 
         private void BlockSidePanel(bool block) 
         {
-            btnSettings.IsEnabled = btndeploy.IsEnabled = btnCommit.IsEnabled = !block;
+            btnSettings.IsEnabled = btnDeploy.IsEnabled = btnCommit.IsEnabled = !block;
         }
     }
 }

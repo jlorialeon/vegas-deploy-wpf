@@ -41,6 +41,7 @@ namespace FF.Vegas.Deploy.UI
             builder.Services.AddScoped((sp) => new CommitPage());
             builder.Services.AddScoped((sp) => new SettingsPage());
             builder.Services.AddScoped((sp) => new DeployPage());
+            builder.Services.AddScoped((sp) => new MainPage(sp.GetService<IPageFactory>()));
         }
     }
 }

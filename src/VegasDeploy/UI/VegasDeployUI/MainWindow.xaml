@@ -4,43 +4,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FF.Vegas.Deploy.UI"
+        xmlns:localp="clr-namespace:FF.Vegas.Deploy.UI.Pages"
         mc:Ignorable="d"
-        Title="Vegas Deploy" Height="427" Width="650" MinWidth="650" Background="#f3f3f3">
+        Title="Vegas Deploy" Height="270" Width="400" MinHeight="270" MinWidth="300"  Background="#f3f3f3" Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition MinWidth="150" MaxWidth="200"/>
-            <ColumnDefinition Width="*" MinWidth="400"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0">
-            <Border>
-                <StackPanel>
-                    <Button x:Name="btnCommit" Click="btnCommit_Click" Margin="0,2,0,0" Padding="10,5,5,5"   Background="Transparent" BorderThickness="0" HorizontalContentAlignment="Left">
-                        <StackPanel Orientation="Horizontal" >
-                            <Image Source="/Resources/Icons/git.png" Margin="5,0,0,0" Width="28" Height="28"/>
-                            <TextBlock FontSize="14" VerticalAlignment="Center" Margin="15,0,0,0">Commit</TextBlock>
-                        </StackPanel>
-                    </Button>
-                    <Button x:Name="btnDeploy" Click="btndeploy_Click" Padding="10,5,5,5"  Background="Transparent" BorderThickness="0" HorizontalContentAlignment="Left">
-                        <StackPanel Orientation="Horizontal" >
-                            <Image Source="/Resources/Icons/upload.png" Margin="5,0,0,0" Width="28" Height="28"/>
-                            <TextBlock FontSize="14" VerticalAlignment="Center" Margin="15,0,0,0">Deploy</TextBlock>
-                        </StackPanel>
-                    </Button>
-                    <Button x:Name="btnSettings" Padding="10,5,5,5" Click="btnSettings_Click" Background="Transparent" BorderThickness="0" HorizontalContentAlignment="Left">
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="/Resources/Icons/settings.png" Margin="5,0,0,0" Width="28" Height="28"/>
-                            <TextBlock FontSize="14" VerticalAlignment="Center" Margin="15,0,0,0" >Settings</TextBlock>
-                        </StackPanel>
-                    </Button>
-                </StackPanel>
-            </Border>
-        </Grid>
-        <Grid Grid.Column="1" >
-            <StackPanel Margin="10">
-                <Frame x:Name="frmMain" NavigationUIVisibility="Hidden">
-                    
-                </Frame>
-            </StackPanel>
+        <Grid Grid.Column="0" >
+            <Frame x:Name="frameMain"   NavigationUIVisibility="Hidden" d:DataContext="{d:DesignInstance IsDesignTimeCreatable=True, Type={x:Type localp:MainPage}}" Content="{Binding}"  />
         </Grid>
     </Grid>
 </Window>

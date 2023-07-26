@@ -1,5 +1,4 @@
-﻿using FF.Vegas.Deploy.UI.Pages;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -15,30 +14,43 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace FF.Vegas.Deploy.UI
+namespace FF.Vegas.Deploy.UI.Pages
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for MainPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainPage : Page
     {
-        private readonly IWindowFactory windowFactory;
         private readonly IPageFactory pageFactory;
 
-        public MainWindow(IWindowFactory? windowFactory, IPageFactory? pageFactory)
+        public MainPage(IPageFactory? pageFactory)
         {
-            ArgumentNullException.ThrowIfNull(windowFactory, nameof(windowFactory));
-            ArgumentNullException.ThrowIfNull(pageFactory, nameof(pageFactory));
-
             InitializeComponent();
 
-            this.windowFactory = windowFactory;
+            ArgumentNullException.ThrowIfNull(pageFactory, nameof(pageFactory));
             this.pageFactory = pageFactory;
+            
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        public MainPage()
         {
-            frameMain.Content = pageFactory.Create<MainPage>();
+            InitializeComponent();
+            this.pageFactory = new NullPageFactory();
+        }
+
+        private void BtnCommit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Btndeploy_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnSettings_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

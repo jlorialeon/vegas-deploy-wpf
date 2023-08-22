@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="FF.Vegas.Deploy.UI.Controls.ImageButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FF.Vegas.Deploy.UI.Controls"
+             mc:Ignorable="d"
+             d:Width="300" 
+             d:Height="70" 
+             MinHeight="75"
+             MinWidth="180" 
+             d:DataContext="{Binding RelativeSource={RelativeSource self}}"
+             DataContext="{Binding RelativeSource={RelativeSource self}}">
+    <UserControl.Resources>
+        <Style x:Key="ImageButtonStyle" TargetType="Border">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#bee6fd"></Setter>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="False">
+                    <Setter Property="Background" Value="GhostWhite"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Border  BorderBrush="Silver" BorderThickness="1" CornerRadius="4,4,4,4" Style="{StaticResource ImageButtonStyle}">
+        <Grid VerticalAlignment="Center" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image Grid.Column="0" 
+                   Grid.Row="0" 
+                   Source="{Binding ImageSource}"
+                   Width="28" 
+                   Height="28" ></Image>
+            <StackPanel Margin="2,2,2,2" Orientation="Vertical" Grid.Row="0" Grid.Column="1">
+                <TextBlock FontSize="14" 
+                           FontWeight="Bold" 
+                           Text="{Binding ButtonHeader}">
+                </TextBlock>
+                <TextBlock TextWrapping="Wrap" 
+                           Text="{Binding ButtonDescription}">
+                </TextBlock>
+            </StackPanel>
+        </Grid>
+    </Border>
+</UserControl>

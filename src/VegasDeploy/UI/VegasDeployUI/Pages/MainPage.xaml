@@ -1,11 +1,14 @@
-﻿<Page x:Class="FF.Vegas.Deploy.UI.Pages.MainPage"
+﻿<Page xmlns:Controls="clr-namespace:FF.Vegas.Deploy.UI.Controls"  x:Class="FF.Vegas.Deploy.UI.Pages.MainPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FF.Vegas.Deploy.UI.Pages"
       mc:Ignorable="d"
-      Title="MainPage" Width="380" Height="224" VerticalAlignment="Top">
+      Title="MainPage" 
+      d:Width="380" 
+      d:Height="225" 
+      VerticalAlignment="Top">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -14,33 +17,23 @@
         <Grid Grid.Column="0">
             <Border>
                 <StackPanel>
-                    <Button x:Name="BtnCommit" Click="BtnCommit_Click" Height="65" Margin="5,5,5,5" Padding="10,10,5,5" Background="White"  HorizontalContentAlignment="Left" BorderThickness="0,0,0,0">
-                        <StackPanel Orientation="Horizontal" >
-                            <Image Source="../Resources/Icons/git.png" Margin="5,5,5,5" Width="28" Height="28"/>
-                            <StackPanel>
-                                <TextBlock FontSize="14" VerticalAlignment="Center" Margin="15,0,0,0" FontWeight="Bold">Commit</TextBlock>
-                                <TextBlock VerticalAlignment="Center" Margin="15,0,0,0">Update the production repository.</TextBlock>
-                            </StackPanel>
-                        </StackPanel>
-                    </Button>
-                    <Button x:Name="BtnDeploy" Click="Btndeploy_Click" Height="65" Padding="10,5,5,5" Margin="5,5,5,5" Background="White" BorderThickness="0" HorizontalContentAlignment="Left">
-                        <StackPanel Orientation="Horizontal" >
-                            <Image Source="../Resources/Icons/upload.png" Margin="5,0,0,0" Width="28" Height="28"/>
-                            <StackPanel>
-                                <TextBlock FontSize="14" VerticalAlignment="Center" Margin="15,0,0,0" FontWeight="Bold">Deploy</TextBlock>
-                                <TextBlock VerticalAlignment="Center" Margin="15,0,0,0" Foreground="#FF5B5B5B">Sync the production servers with the main repository.</TextBlock>
-                            </StackPanel>
-                        </StackPanel>
-                    </Button>
-                    <Button x:Name="BtnSettings" Padding="10,5,5,5" Height="65" Margin="5,5,5,5" Click="BtnSettings_Click" Background="White" BorderThickness="0" HorizontalContentAlignment="Left">
-                        <StackPanel Orientation="Horizontal" >
-                            <Image Source="../Resources/Icons/settings.png" Margin="5,0,0,0" Width="28" Height="28"/>
-                            <StackPanel Height="52">
-                                <TextBlock FontSize="14" VerticalAlignment="Center" Margin="15,0,0,0" FontWeight="Bold">Setting</TextBlock>
-                                <TextBlock Margin="15,0,0,0" Foreground="#FF5B5B5B" TextWrapping="WrapWithOverflow" Width="294" >Configure SVN account, GUI repository path and Server repository path.</TextBlock>
-                            </StackPanel>
-                        </StackPanel>
-                    </Button>
+                    <Controls:ImageButton ButtonHeader="Commit" 
+                                          ButtonDescription="Update the production repository." 
+                                          ImageSource="../Resources/Icons/git.png"
+                                          Padding="5,5,5,5" 
+                                          Height="75"/>
+
+                    <Controls:ImageButton ButtonHeader="Deploy" 
+                                          ButtonDescription="Sync the production servers with the main repository." 
+                                          ImageSource="../Resources/Icons/upload.png"
+                                          Padding="5,5,5,5"  
+                                          Height="75"/>
+
+                    <Controls:ImageButton ButtonHeader="Settings" 
+                                          ButtonDescription="Configure SVN account, GUI repository path and Server repository path." 
+                                          ImageSource="../Resources/Icons/settings.png"
+                                          Padding="5,5,5,5"
+                                          Height="75"/>
                 </StackPanel>
             </Border>
         </Grid>

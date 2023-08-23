@@ -40,17 +40,18 @@ namespace FF.Vegas.Deploy.UI.Pages
 
         private void BtnCommit_Click(object sender, RoutedEventArgs e)
         {
-
+            var a = 0;
         }
 
         private void Btndeploy_Click(object sender, RoutedEventArgs e)
         {
-
+            var a = 0;
         }
 
         private void BtnSettings_Click(object sender, RoutedEventArgs e)
         {
-
+            var a = 0;
         }
+
     }
 }

@@ -38,7 +38,7 @@ namespace FF.Vegas.Deploy.UI
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            frameMain.Content = pageFactory.Create<MainPage>();
+            frameMain.Content = pageFactory.Create<SettingsPage>();
         }
     }
 }

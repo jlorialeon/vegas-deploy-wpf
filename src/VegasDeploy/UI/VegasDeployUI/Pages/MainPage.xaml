@@ -21,19 +21,26 @@
                                           ButtonDescription="Update the production repository." 
                                           ImageSource="../Resources/Icons/git.png"
                                           Padding="5,5,5,5" 
-                                          Height="75"/>
+                                          Height="75"
+                                          x:Name="btnCommit" 
+                                          Click="BtnCommit_Click"/>
 
                     <Controls:ImageButton ButtonHeader="Deploy" 
                                           ButtonDescription="Sync the production servers with the main repository." 
                                           ImageSource="../Resources/Icons/upload.png"
                                           Padding="5,5,5,5"  
-                                          Height="75"/>
+                                          Height="75"
+                                          x:Name="btnDeploy"
+                                          Click="Btndeploy_Click"/>
 
                     <Controls:ImageButton ButtonHeader="Settings" 
                                           ButtonDescription="Configure SVN account, GUI repository path and Server repository path." 
                                           ImageSource="../Resources/Icons/settings.png"
                                           Padding="5,5,5,5"
-                                          Height="75"/>
+                                          Height="75"
+                                          x:Name="btnSettings" Click="BtnSettings_Click"/>
+                    
+                    
                 </StackPanel>
             </Border>
         </Grid>

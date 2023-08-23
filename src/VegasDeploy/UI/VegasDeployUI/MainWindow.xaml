@@ -6,13 +6,13 @@
         xmlns:local="clr-namespace:FF.Vegas.Deploy.UI"
         xmlns:localp="clr-namespace:FF.Vegas.Deploy.UI.Pages"
         mc:Ignorable="d"
-        Title="Vegas Deploy" Height="350" Width="400" MinHeight="270" MinWidth="300"  Background="#f3f3f3" Loaded="Window_Loaded">
+        Title="Vegas Deploy" Height="680" Width="500" MinHeight="270" MinWidth="300"  Background="#f3f3f3" Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0" >
-            <Frame x:Name="frameMain"   NavigationUIVisibility="Hidden" d:DataContext="{d:DesignInstance IsDesignTimeCreatable=True, Type={x:Type localp:MainPage}}" Content="{Binding}"  />
+            <Frame x:Name="frameMain" Margin="0,5,0,0"  NavigationUIVisibility="Hidden" d:DataContext="{d:DesignInstance IsDesignTimeCreatable=True, Type={x:Type localp:MainPage}}" Content="{Binding}"  />
         </Grid>
     </Grid>
 </Window>

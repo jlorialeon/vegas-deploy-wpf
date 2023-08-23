@@ -20,11 +20,12 @@ namespace FF.Vegas.Deploy.UI.Controls
     /// </summary>
     public partial class ImageButton : UserControl
     {
-        public static readonly DependencyProperty ButtonHeaderProperty = DependencyProperty.Register("ButtonHeader", 
-                                                                                                     typeof(string), 
-                                                                                                     typeof(ImageButton),
-                                                                                                     new FrameworkPropertyMetadata(null,
-                                                                                                     FrameworkPropertyMetadataOptions.AffectsRender));
+        #region Dependency Properties
+        public static readonly DependencyProperty ButtonHeaderProperty = DependencyProperty.Register("ButtonHeader",
+                                                                                             typeof(string),
+                                                                                             typeof(ImageButton),
+                                                                                             new FrameworkPropertyMetadata(null,
+                                                                                             FrameworkPropertyMetadataOptions.AffectsRender));
 
         public static readonly DependencyProperty ButtonDescriptionProperty = DependencyProperty.Register("ButtonDescription",
                                                                                              typeof(string),
@@ -38,6 +39,9 @@ namespace FF.Vegas.Deploy.UI.Controls
                                                                                      typeof(ImageButton),
                                                                                      new FrameworkPropertyMetadata(null,
                                                                                      FrameworkPropertyMetadataOptions.AffectsRender));
+
+
+
 
 
 
@@ -58,10 +62,18 @@ namespace FF.Vegas.Deploy.UI.Controls
             get { return (ImageSource)GetValue(ImageSourceProperty); }
             set { SetValue(ImageSourceProperty, value); }
         }
+        #endregion
+
+        public event RoutedEventHandler? Click;
 
         public ImageButton()
         {
             InitializeComponent();
+        }
+
+        private void UserControl_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            Click?.Invoke(this, e);
         }
     }
 }

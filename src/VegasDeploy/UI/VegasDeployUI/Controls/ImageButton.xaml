@@ -10,7 +10,8 @@
              MinHeight="75"
              MinWidth="180" 
              d:DataContext="{Binding RelativeSource={RelativeSource self}}"
-             DataContext="{Binding RelativeSource={RelativeSource self}}">
+             DataContext="{Binding RelativeSource={RelativeSource self}}" 
+             MouseLeftButtonUp="UserControl_MouseLeftButtonUp">
     <UserControl.Resources>
         <Style x:Key="ImageButtonStyle" TargetType="Border">
             <Style.Triggers>

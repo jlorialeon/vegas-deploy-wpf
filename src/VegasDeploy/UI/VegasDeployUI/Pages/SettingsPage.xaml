@@ -27,12 +27,12 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
 
-        <TextBlock FontSize="16" FontWeight="Light" Foreground="#575757" Margin="10,0,0,0">SVN</TextBlock>
+        <TextBlock FontSize="15" FontWeight="SemiBold" Margin="10,0,0,0">SVN</TextBlock>
 
 
 
 
-        <TextBlock FontSize="16" Grid.Row="3" FontWeight="Light"  Foreground="#575757" Margin="10,0,0,0">Vegas Assemblies Path</TextBlock>
+        <TextBlock FontSize="15" Grid.Row="3" FontWeight="SemiBold"   Margin="10,0,0,0">Vegas Assemblies Path</TextBlock>
         <Border  Grid.Row="4" Grid.Column="0" BorderThickness="1.5" BorderBrush="#cccaca" Background="White" CornerRadius="2">
             <Grid Margin="20,15,20,15">
                 <Grid.ColumnDefinitions>
